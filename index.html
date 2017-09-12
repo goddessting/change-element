@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="a">
+    <span id="c">我在外边  <span id="b">我在里边</span></span>
+</span>
+
+<input type="button" onclick="changeElement()" value="交换节点">
+</body>
+<script>
+    function changeElement() {
+        let c = document.getElementById("c");
+        let b = document.getElementById("b");
+
+        let newB = c.parentNode.insertBefore(b, c);
+        newB.insertBefore(c, null);
+
+    }
+//下边这个方法也可以用
+//    function changeElement() {
+//        let c = document.getElementById("c");
+//        let b = document.getElementById("b");
+//
+//        let newB = c.parentNode.appendChild(b);
+//        newB.appendChild(c);
+//    }
+</script>
+</html>
